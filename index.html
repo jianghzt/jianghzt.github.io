@@ -9,10 +9,10 @@
   <p>这是我用 GitHub 做的第一个首页！往后会坚持更新！</p >
   <a href="/about/">关于我</a>
   <h2>我的文章</h2>
-<ul>
-{% for post in site.posts %}
-  <li><a href=" ">{{ post.title }}</a ></li>
-{% endfor %}
-</ul>
+  <ul>
+  {% for post in site.posts %}
+    <li><a href=" ">{{ post.title }}</a ></li>
+  {% endfor %}
+  </ul>
 </body>
 </html>
