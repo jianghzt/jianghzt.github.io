@@ -13,7 +13,7 @@
   <h2>New！盘前信息面汇总</h2>
   <ul>
   {% for post in site.posts %}
-    <li><a href=" ">{{ post.title }}</a ></li>
+    <li><a href="{{ post.url }} ">{{ post.title }}</a ></li>
   {% endfor %}
   </ul>
 </body>
