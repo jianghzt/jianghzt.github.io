@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "欧洲央行加息25个基点！年内第二次！"
-date: 日期
+date: 2026-09-11
 categories: [大金融]
 tags: [大金融,国际视野,欧洲央行,加息]
 description: 欧洲央行年内第二次加息
