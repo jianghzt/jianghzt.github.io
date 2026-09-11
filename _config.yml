@@ -1,9 +1,18 @@
 theme: minima
+lang: zh-CN
+timezone: Asia/Shanghai
 title: 江恒智投的分享站
-description: 股市信息面分享与个人随笔
-                   所有内容均仅供参考，不构成任何投资建议
+description: 股市信息面分享与精选文章
+tagline: 每天梳理一条市场信息，做有据可循的观察
 author: 江恒智投
+disclaimer: 所有内容均仅供参考，不构成任何投资建议
+url: "https://jianghzt.github.io"
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 minima:
+  show_excerpts: true
   date_format: "%Y-%m-%d"

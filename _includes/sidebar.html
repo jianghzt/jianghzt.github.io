@@ -1,0 +1,47 @@
+<aside class="sidebar" aria-label="站点导航">
+  <div class="sidebar-inner">
+    <a class="sidebar-brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark">江</span>
+      <span class="brand-text">
+        <strong>{{ site.title }}</strong>
+        <small>{{ site.tagline }}</small>
+      </span>
+    </a>
+
+    <nav class="sidebar-nav" aria-label="主导航">
+      <ul>
+        {%- for item in site.data.navigation.main -%}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <section class="sidebar-section sidebar-recent">
+      <h2>最近更新</h2>
+      <ul>
+        {%- for post in site.posts limit: 5 -%}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d" }}</time>
+        </li>
+        {%- else -%}
+        <li>暂无文章</li>
+        {%- endfor -%}
+      </ul>
+    </section>
+
+    {%- if page.layout == 'post' -%}
+    <nav class="sidebar-section sidebar-toc" aria-label="文章目录">
+      <h2>本页目录</h2>
+      <ul class="js-toc"></ul>
+    </nav>
+    {%- endif -%}
+
+    <div class="sidebar-foot">
+      <p>{{ site.disclaimer }}</p>
+      <p>© {{ site.time | date: "%Y" }} {{ site.author }}</p>
+    </div>
+  </div>
+</aside>

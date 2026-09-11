@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<div class="home">
+  <header class="page-heading home-hero">
+    <p class="eyebrow">{{ site.tagline }}</p>
+    <h1>{{ page.title | default: "首页" }}</h1>
+    <div class="home-welcome">{{ content }}</div>
+  </header>
+
+  {%- assign featured = site.posts | first -%}
+  {%- if featured -%}
+  <section class="featured-post">
+    <p class="featured-label">最新发布</p>
+    <h2><a href="{{ featured.url | relative_url }}">{{ featured.title | escape }}</a></h2>
+    <p class="featured-meta">{{ featured.date | date: site.minima.date_format | default: "%Y-%m-%d" }}</p>
+    <p class="featured-excerpt">{{ featured.description | default: featured.excerpt | strip_html | truncate: 140 }}</p>
+    <a class="read-more" href="{{ featured.url | relative_url }}">阅读全文</a>
+  </section>
+  {%- endif -%}
+
+  {%- if site.posts.size > 1 -%}
+  <section class="post-list">
+    <h2>{{ page.list_title | default: "全部文章" }}</h2>
+    {%- for post in site.posts offset: 1 -%}
+    <article class="post-card">
+      <div class="post-card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.minima.date_format | default: "%Y-%m-%d" }}</time>
+        {%- for category in post.categories -%}
+        <span class="badge">{{ category }}</span>
+        {%- endfor -%}
+      </div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      <p>{{ post.description | default: post.excerpt | strip_html | truncate: 120 }}</p>
+      <a class="read-more" href="{{ post.url | relative_url }}">阅读全文</a>
+    </article>
+    {%- endfor -%}
+  </section>
+  {%- elsif site.posts.size == 0 -%}
+  <section class="post-list">
+    <h2>{{ page.list_title | default: "全部文章" }}</h2>
+    <p class="empty">暂无文章，敬请期待。</p>
+  </section>
+  {%- endif -%}
+</div>

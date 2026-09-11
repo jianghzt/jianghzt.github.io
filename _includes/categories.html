@@ -1,0 +1,33 @@
+<section class="category-block" id="gushikuaibao">
+  <h2>股市快报</h2>
+  {%- assign daily_posts = site.posts | where_exp: "post", "post.categories contains '股市快报'" -%}
+  {%- if daily_posts.size > 0 -%}
+  <ul class="archive-list">
+    {%- for post in daily_posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty">暂无文章，敬请期待。</p>
+  {%- endif -%}
+</section>
+
+<section class="category-block" id="jingxuan">
+  <h2>精选文章</h2>
+  {%- assign featured_posts = site.posts | where_exp: "post", "post.categories contains '精选文章'" -%}
+  {%- if featured_posts.size > 0 -%}
+  <ul class="archive-list">
+    {%- for post in featured_posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty">暂无文章，敬请期待。</p>
+  {%- endif -%}
+</section>
