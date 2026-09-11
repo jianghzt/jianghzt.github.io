@@ -1,3 +1,37 @@
+<section class="category-block" id="dajinrong">
+  <h2>大金融</h2>
+  {%- assign dajinrong_posts = site.posts | where_exp: "post", "post.categories contains '大金融'" -%}
+  {%- if dajinrong_posts.size > 0 -%}
+  <ul class="archive-list">
+    {%- for post in dajinrong_posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty">暂无文章，敬请期待。</p>
+  {%- endif -%}
+</section>
+
+<section class="category-block" id="rengongzhineng">
+  <h2>人工智能</h2>
+  {%- assign aigc_posts = site.posts | where_exp: "post", "post.categories contains '人工智能'" -%}
+  {%- if aigc_posts.size > 0 -%}
+  <ul class="archive-list">
+    {%- for post in aigc_posts -%}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- else -%}
+  <p class="empty">暂无文章，敬请期待。</p>
+  {%- endif -%}
+</section>
+
 <section class="category-block" id="gushikuaibao">
   <h2>股市快报</h2>
   {%- assign daily_posts = site.posts | where_exp: "post", "post.categories contains '股市快报'" -%}

@@ -7,5 +7,7 @@ main:
     url: /categories/
   - title: 精选文章
     url: /categories/#jingxuan
-  - title: 归档
-    url: /archive/
+  - title: 大金融
+    url: /categories/#dajinrong
+  - title: 人工智能
+    url: /categories/#rengongzhineng
