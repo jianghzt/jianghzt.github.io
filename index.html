@@ -4,17 +4,84 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>江恒智投的分享站</title>
+  <style>
+    /* 全局页面设置：背景色、字体、居中 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f7f6; /* 清爽的浅灰蓝背景 */
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* 核心卡片：把内容包在一个白色的框里 */
+    .container {
+      background: #ffffff;
+      max-width: 700px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 柔和的阴影 */
+    }
+
+    /* 标题样式 */
+    h1 {
+      color: #0366d6; /* GitHub 经典的蓝色 */
+      font-size: 1.8em;
+      margin-top: 0;
+      border-bottom: 2px solid #eaecef;
+      padding-bottom: 15px;
+    }
+
+    /* 文章列表样式 */
+    h2 {
+      color: #24292e;
+      margin-top: 30px;
+      font-size: 1.4em;
+    }
+    
+    ul {
+      padding-left: 20px;
+      list-style-type: none; /* 去掉默认的小圆点 */
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #0366d6;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>你好，这是江恒的股市信息面分享网站！</h1>
-  <p>这是我用 GitHub 做的第一个首页！往后会坚持更新！</p >
-  <a href="/about/">关于我</a >
-  <h2>我的文章</h2>
-  <ul>
-  {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
+
+  <div class="container">
+    <h1>你好，这是江恒的股市信息面分享网站！</h1>
+    <p>这是我用 GitHub 做的第一个首页！往后会坚持更新！</p>
+    <a href="/about/">关于我</a>
+
+    <h2>我的文章</h2>
+    <ul>
+    {% for post in site.posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+
 </body>
 </html>
