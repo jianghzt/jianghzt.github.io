@@ -1,1 +1,8 @@
 theme: minima
+title: 江恒智投的分享站
+description: 股市信息面分享与个人随笔
+author: jianghzt
+
+# 下面这两行是让系统自动帮你生成文章链接
+minima:
+  date_format: "%Y-%m-%d"
